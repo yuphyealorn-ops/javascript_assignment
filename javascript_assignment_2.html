@@ -1,0 +1,18 @@
+<html> 
+    <body> 
+        <h3>Today Fruits</h3> 
+        <ul id="fruit-list"></ul> 
+        <hr/> 
+        <h3>Today Vegetables</h3> 
+        <ul id="veg-list"></ul> 
+        <script> 
+            //Add your code here 
+            let fruits = ["Apple", "Banana", "Orange", "Manga", "Strawberry"];
+            let vegetables = ["Carrot", "Broccoli", "Spinach", "Tomato", "Cucumber"];
+            for (let i = 0; i < 5; i++) { 
+                document.getElementById("fruit-list").innerHTML += `<li>${fruits[i]}</li>`; 
+                document.getElementById("veg-list").innerHTML += `<li>${vegetables[i]}</li>`; 
+            }
+        </script> 
+    </body> 
+</html> 

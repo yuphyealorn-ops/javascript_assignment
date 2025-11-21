@@ -1,0 +1,64 @@
+<html> 
+    <head> 
+        <title>Add New Item</title> 
+    </head> 
+    <body> 
+        <form action="https://athiphat-mybackend-01.southeastasia.cloudapp.azure.com/api/product" method="post">
+            <fieldset> 
+                <legend>General Info</legend> 
+                <p> 
+                    <label for="itemName">Item Name</label> 
+                    <input type="text" id="itemName" name="itemName" size="50" maxlength="500"/> 
+                    <br><br>
+                    <label for="description">Description</label> 
+                    <textarea id="itemDescription" name="itemDescription" rows="5" cols="50" maxlength="500"></textarea>
+                    <br><br>
+                    <label for="coverImage">Cover Image</label>
+                    <input type="file" id="coverImage" name="coverImage"/>
+                    <br><br>
+                    <label for="category">Category</label>
+                    <select id="category" name="category"> 
+                        <option value="notSpecified" selected>Not Specified</option> 
+                        <option value="consumption">Consumption</option> 
+                        <option value="household">Household</option> 
+                        <option value="electronic">Electronic</option> 
+                        <option value="gadget">Gadget</option> 
+                    </select> 
+                </p> 
+            </fieldset> 
+
+            <fieldset> 
+                <legend>Misc.</legend> 
+                <p>
+                    <label for="inventoryAmount">Inventory Amount</label>
+                    <input type="number" id="inventoryAmount" name="inventoryAmount" min="0">
+                    <br><br>
+                    <label for="listPrice">List Price</label>
+                    <input type="number" id="listPrice" name="listPrice" min="0">
+                    <br><br>
+                    <label for="availableStore[]"><b>Available Stores</b></label>
+                    <br>
+                    <input type="checkbox" id="store1" name="store1" value="Bangkok">Bangkok
+                    <input type="checkbox" id="store2" name="store2" value="Pattaya">Pattaya
+                    <input type="checkbox" id="store3" name="store3" value="Phuket">Phuket
+                    <br><br>
+                    <label for="status"><b>Active Status</b></label>
+                    <br>
+                    <input type="radio" id="active" name="status" value="Active">Active
+                    <input type="radio" id="inactive" name="status" value="Inactive">Inactive
+                </p>
+            </fieldset> 
+
+            <fieldset> 
+                <legend>Staff</legend>
+                <p>
+                    <label for="staffEmail">Staff Email</label>
+                    <input type="email" id="staffEmail" name="staffEmail">
+                </p>
+            </fieldset> 
+            <button type="submit">Submit Form</button> 
+        </form> 
+    </body> 
+</html> 
+
+ 
