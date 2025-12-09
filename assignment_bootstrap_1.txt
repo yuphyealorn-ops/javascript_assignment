@@ -1,0 +1,10 @@
+1. col-lg-6
+The column will be 50% width only on large screens (≥ 992px) and wider. On medium (768–991px) and small/extra-small (< 768px) screens, it will span 12 columns (100%) and stack.
+
+2. col-sm-6
+The column will be 50% width on small screens and up (≥ 576px). Only on extra-small screens (< 576px) will it stack to 100%.
+
+Difference and analysis:
+- col-sm-6 makes the column take 50% width starting at small screens (≥576px) and up, so it shows two columns on most phones and larger; only very narrow screens (<576px) stack to 100%.
+- col-md-6 makes the column 50% width starting at medium screens (≥768px) and up, so phones stack to a single column while tablets and larger show two columns.
+- col-lg-6 makes the column 50% width only on large screens (≥992px) and up, so both phones and most tablets stack to a single column, and two columns appear mainly on laptops/desktops.

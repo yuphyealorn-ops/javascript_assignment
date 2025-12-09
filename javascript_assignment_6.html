@@ -4,11 +4,10 @@
         <title>Monster Detail</title>
     </head> 
     <body> 
-    <!-- You can modify the HTML to apply change event or add more elements --> 
         <h3>Monster Detail</h3> 
         <div>Select Monster:</div> 
         <div> 
-            <select id="monster-list" onchange="selectMonsterDropdown()"></select> 
+            <select id="monster-list" onchange="selectDropdown()"></select> 
         </div> 
         <hr/> 
         <div> 
@@ -32,7 +31,6 @@
             </table> 
         </div> 
         <script> 
-            // Monster list as array of JSON objects 
             const monsters = [ 
                 { 
                     "id": 1, 
@@ -95,14 +93,12 @@
                     "exp": 150 
                 } 
             ]; 
-            // Your script goes here...
+
             const monsterList = document.getElementById("monster-list");
             const tdId = document.getElementById("td-monster-id");
             const tdName = document.getElementById("td-monster-name");
             const tdHp = document.getElementById("td-monster-hp");
             const tdExp = document.getElementById("td-monster-exp");
-
-            let index = monsterList.value;
 
             function clearCells() {
                 tdId.textContent = "";
@@ -111,8 +107,7 @@
                 tdExp.textContent = "";
             }
 
-            function showMonsterDetails(index) {
-
+            function showDetails(index) {
                 const m = monsters[index];
                 if (!m) {
                     clearCells();
@@ -124,33 +119,33 @@
                 tdExp.textContent = m.exp;
             }
 
-            function selectMonsterDropdown() {
-                index = monsterList.value;
+            function populateDropdown() {
                 const def = document.createElement("option");
-                def.value = "-";
+                def.value = "";
                 def.textContent = "-";
-                monsterList.append(def)
+                monsterList.appendChild(def);
 
-                monsters.forEach((monster, index) => {
+                monsters.forEach((monster, i) => {
                     const opt = document.createElement("option");
-                    opt.value = String(index);
+                    opt.value = i;
                     opt.textContent = monster.name;
                     monsterList.appendChild(opt);
                 });
             }
 
-            monsterList.addEventListener("change", function() {
-                const val = this.value;
+            function selectDropdown() {
+                const val = monsterList.value;
+
                 if (val === "") {
                     clearCells();
-                } else {
-                    const idx = Number(val);
-                    showMonsterDetails(index);
+                    return;
                 }
-            });
 
-            selectMonsterDropdown();
+                showDetails(Number(val));
+            }
+
+            populateDropdown();
             clearCells();
         </script> 
     </body> 
-</html> 
+</html>
